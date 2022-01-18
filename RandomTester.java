@@ -22,16 +22,11 @@ public class RandomTester
         }
     }
     
-    public void lanzarDado(){
+    public int lanzarDado(){
         boolean completado = false;
-        while(!completado){
-            Random dado = new Random();
-            int tirada = dado.nextInt(7);
-            if(tirada > 0){
-                System.out.println(tirada);
-                completado = true;
-            }
-        }
+        Random dado = new Random();
+        int tirada = dado.nextInt(6);
+        return tirada + 1;
     }
     
     
@@ -51,28 +46,15 @@ public class RandomTester
         return respuesta;
     }
     
-    public void getNumeroEntre1Y(int limite){
-        boolean completado = false;
-        while(!completado){
-            Random aleatorio = new Random();
-            int numero = aleatorio.nextInt(limite + 1);
-            if(numero > 0){
-                System.out.println(numero);
-                completado = true;
-            }
-        }
+    public int getNumeroEntre1Y(int limite){
+        Random aleatorio = new Random();
+        int numero = aleatorio.nextInt(limite);
+        return numero + 1;
     }
     
     public int getNumeroEntre(int limite, int limiteBajo){
-        boolean completado = false;
-        int numero = 0;
-        while(!completado){
-            Random aleatorio = new Random();
-            numero = aleatorio.nextInt(limite + 1);
-            if(numero > limiteBajo){
-                completado = true;
-            }
-        }
-        return numero;
+        Random aleatorio = new Random();
+        int numero = aleatorio.nextInt(limite - limiteBajo);
+        return numero + limiteBajo;
     }
 }
